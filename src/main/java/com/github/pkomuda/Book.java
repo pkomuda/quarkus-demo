@@ -1,6 +1,7 @@
 package com.github.pkomuda;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -10,6 +11,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false, onlyExplicitlyIncluded = true)
 public class Book extends PanacheEntity {
 
+    @Column(unique = true)
     @EqualsAndHashCode.Include
     private String isbn;
 
