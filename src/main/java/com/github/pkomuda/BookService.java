@@ -25,8 +25,6 @@ public class BookService {
     }
 
     public List<BookDto> getAllBooks() {
-        return bookRepository.findAll().stream()
-                .map(bookMapper::toDto)
-                .toList();
+        return bookMapper.toDtos(bookRepository.listAll());
     }
 }
