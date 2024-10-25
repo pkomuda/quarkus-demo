@@ -4,9 +4,13 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.jboss.resteasy.reactive.RestResponse;
+import org.jboss.resteasy.reactive.server.ServerExceptionMapper;
 
 import java.util.List;
 
+@Slf4j
 @Path("/books")
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -30,5 +34,11 @@ class BookController {
     @GET
     public List<BookDto> getAllBooks() {
         return bookService.getAllBooks();
+    }
+
+    @ServerExceptionMapper
+    public RestResponse<String> handleException(Exception e) {
+        log.error("Handled exception", e);
+        return RestResponse.status(RestResponse.Status.BAD_REQUEST, e.getMessage());
     }
 }
