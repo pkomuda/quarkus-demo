@@ -9,7 +9,7 @@ import java.util.List;
 @Transactional
 @ApplicationScoped
 @RequiredArgsConstructor
-public class BookService {
+class BookService {
 
     private final BookRepository bookRepository;
     private final BookMapper bookMapper;

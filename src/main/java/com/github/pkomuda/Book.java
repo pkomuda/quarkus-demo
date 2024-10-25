@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @Entity
 @EqualsAndHashCode(callSuper = false, onlyExplicitlyIncluded = true)
-public class Book extends PanacheEntity {
+class Book extends PanacheEntity {
 
     @Column(unique = true)
     @EqualsAndHashCode.Include

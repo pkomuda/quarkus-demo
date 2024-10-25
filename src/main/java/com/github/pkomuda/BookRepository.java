@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Transactional
 @ApplicationScoped
-public class BookRepository implements PanacheRepository<Book> {
+class BookRepository implements PanacheRepository<Book> {
 
     public Optional<Book> findByIsbn(String isbn) {
         return find("isbn", isbn).singleResultOptional();

@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class BookController {
+class BookController {
 
     private final BookService bookService;
 

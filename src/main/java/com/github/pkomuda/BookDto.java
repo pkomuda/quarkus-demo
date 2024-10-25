@@ -1,6 +1,6 @@
 package com.github.pkomuda;
 
-public record BookDto(
+record BookDto(
         String isbn,
         String title,
         String author) {
