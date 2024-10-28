@@ -1,6 +1,5 @@
 package com.github.pkomuda;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +11,6 @@ import java.util.List;
 
 @Slf4j
 @Path("/books")
-@ApplicationScoped
 @RequiredArgsConstructor
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
